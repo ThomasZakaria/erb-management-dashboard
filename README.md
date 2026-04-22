@@ -12,6 +12,8 @@ A modern, responsive, and professional Enterprise Resource Business (ERB) dashbo
 - **Transactions Table**: A clean data table with dynamic status badges (Completed/Pending).
 - **Responsive Design**: Fully optimized for various screen sizes using Tailwind's utility-first approach.
 
+---
+
 ## 🛠️ Tech Stack
 
 - **Framework**: React 19 (Vite)
@@ -19,6 +21,8 @@ A modern, responsive, and professional Enterprise Resource Business (ERB) dashbo
 - **Icons**: Lucide React
 - **Charts**: Recharts
 - **Fonts**: Inter / Sans-serif
+
+---
 
 ## 🚀 Getting Started
 
@@ -30,39 +34,37 @@ A modern, responsive, and professional Enterprise Resource Business (ERB) dashbo
 ### Installation
 
 1. **Clone the repository:**
-   ```bash
-   git clone [https://github.com/ThomasZakaria/erb-management-dashboard.git](https://github.com/ThomasZakaria/erb-management-dashboard.git)
-   ```
-
-````
+   \`\`\`bash
+   git clone https://github.com/ThomasZakaria/erb-management-dashboard.git
+   \`\`\`
 
 2. **Navigate to the project directory:**
-
-   ```bash
+   \`\`\`bash
    cd erb-management-dashboard
-   ```
+   \`\`\`
 
 3. **Install dependencies:**
-
-   ```bash
+   \`\`\`bash
    npm install
-   ```
+   \`\`\`
 
 4. **Start the development server:**
-   ```bash
+   \`\`\`bash
    npm run dev
-   ```
+   \`\`\`
+
+---
 
 ## 📂 Project Structure
 
-```text
+\`\`\`text
 src/
-├── components/     # Reusable UI components (StatCard, MainChart, etc.)
-├── layout/         # Layout components (Sidebar)
-├── assets/         # Static images and icons
-├── App.jsx         # Main application logic
-└── main.jsx        # Entry point
-```
+├── components/ # Reusable UI components (StatCard, MainChart, etc.)
+├── layout/ # Layout components (Sidebar)
+├── assets/ # Static images and icons
+├── App.jsx # Main application logic
+└── main.jsx # Entry point
+\`\`\`
 
 ---
 
@@ -70,13 +72,8 @@ src/
 
 **Thomas Zakaria**
 
-- [GitHub](https://github.com/ThomasZakaria)
+- GitHub: https://github.com/ThomasZakaria
 
 ---
 
 _Developed as part of a front-end engineering journey in 2026._
-
-```
-
-```
-````

@@ -1,4 +1,3 @@
-````markdown
 # ERB Management Dashboard 🚀
 
 A modern, responsive, and professional Enterprise Resource Business (ERB) dashboard built with **React**, **Tailwind CSS**, and **Vite**. This project focuses on high performance and clean UI/UX patterns.
@@ -34,6 +33,7 @@ A modern, responsive, and professional Enterprise Resource Business (ERB) dashbo
    ```bash
    git clone [https://github.com/ThomasZakaria/erb-management-dashboard.git](https://github.com/ThomasZakaria/erb-management-dashboard.git)
    ```
+
 ````
 
 2. **Navigate to the project directory:**
@@ -79,3 +79,4 @@ _Developed as part of a front-end engineering journey in 2026._
 ```
 
 ```
+````

@@ -1,16 +1,81 @@
-# React + Vite
+````markdown
+# ERB Management Dashboard 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive, and professional Enterprise Resource Business (ERB) dashboard built with **React**, **Tailwind CSS**, and **Vite**. This project focuses on high performance and clean UI/UX patterns.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Features
 
-## React Compiler
+- **Modern Sidebar**: Fixed navigation with interactive hover effects and active states.
+- **Analytics Overview**: Interactive Area Charts using **Recharts** for revenue tracking.
+- **Stat Cards**: Reusable components for displaying key business metrics (Balance, Earnings, Projects).
+- **Transactions Table**: A clean data table with dynamic status badges (Completed/Pending).
+- **Responsive Design**: Fully optimized for various screen sizes using Tailwind's utility-first approach.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Tech Stack
 
-## Expanding the ESLint configuration
+- **Framework**: React 19 (Vite)
+- **Styling**: Tailwind CSS V4
+- **Icons**: Lucide React
+- **Charts**: Recharts
+- **Fonts**: Inter / Sans-serif
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js (v18.0.0 or higher)
+- npm
+
+### Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/ThomasZakaria/erb-management-dashboard.git](https://github.com/ThomasZakaria/erb-management-dashboard.git)
+   ```
+````
+
+2. **Navigate to the project directory:**
+
+   ```bash
+   cd erb-management-dashboard
+   ```
+
+3. **Install dependencies:**
+
+   ```bash
+   npm install
+   ```
+
+4. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
+
+## 📂 Project Structure
+
+```text
+src/
+├── components/     # Reusable UI components (StatCard, MainChart, etc.)
+├── layout/         # Layout components (Sidebar)
+├── assets/         # Static images and icons
+├── App.jsx         # Main application logic
+└── main.jsx        # Entry point
+```
+
+---
+
+## 👨‍💻 Author
+
+**Thomas Zakaria**
+
+- [GitHub](https://github.com/ThomasZakaria)
+
+---
+
+_Developed as part of a front-end engineering journey in 2026._
+
+```
+
+```

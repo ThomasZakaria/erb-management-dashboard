@@ -34,37 +34,40 @@ A modern, responsive, and professional Enterprise Resource Business (ERB) dashbo
 ### Installation
 
 1. **Clone the repository:**
-   \`\`\`bash
+
+   ```bash
    git clone https://github.com/ThomasZakaria/erb-management-dashboard.git
-   \`\`\`
+   ```
 
 2. **Navigate to the project directory:**
-   \`\`\`bash
+
+   ```bash
    cd erb-management-dashboard
-   \`\`\`
+   ```
 
 3. **Install dependencies:**
-   \`\`\`bash
+
+   ```bash
    npm install
-   \`\`\`
+   ```
 
 4. **Start the development server:**
-   \`\`\`bash
+   ```bash
    npm run dev
-   \`\`\`
+   ```
 
 ---
 
 ## 📂 Project Structure
 
-\`\`\`text
+```text
 src/
 ├── components/ # Reusable UI components (StatCard, MainChart, etc.)
 ├── layout/ # Layout components (Sidebar)
 ├── assets/ # Static images and icons
 ├── App.jsx # Main application logic
 └── main.jsx # Entry point
-\`\`\`
+```
 
 ---
 

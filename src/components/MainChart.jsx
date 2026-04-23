@@ -1,19 +1,19 @@
 import {
-  ResponsiveContainer,
   AreaChart,
   Area,
   XAxis,
-  YAxis,
   CartesianGrid,
   Tooltip,
+  ResponsiveContainer,
 } from "recharts";
 
 const data = [
-  { name: "Jan", sales: 4000 },
-  { name: "Feb", sales: 3000 },
-  { name: "Mar", sales: 5000 },
-  { name: "Apr", sales: 4500 },
-  { name: "May", sales: 6000 },
+  { name: "Feb", value: 4000 },
+  { name: "Mar", value: 3000 },
+  { name: "Apr", value: 5000 },
+  { name: "May", value: 2780 },
+  { name: "Jun", value: 6890 },
+  { name: "Jul", value: 8390 },
 ];
 
 export default function MainChart() {
@@ -23,32 +23,50 @@ export default function MainChart() {
         Revenue Flow
       </h3>
 
-      <ResponsiveContainer width="100%" height="100%">
-        <AreaChart data={data}>
-          <CartesianGrid
-            strokeDasharray="3 3"
-            vertical={false}
-            stroke="#f1f5f9"
-          />
-          <XAxis
-            dataKey="name"
-            axisLine={false}
-            tickLine={false}
-            tick={{ fill: "#94a3b8", fontSize: 12 }}
-          />
-          <YAxis hide={true} />
-          <Tooltip />
-
-          <Area
-            type="monotone"
-            dataKey="sales"
-            stroke="#6366f1"
-            fillOpacity={0.1}
-            fill="#6366f1"
-            strokeWidth={3}
-          />
-        </AreaChart>
-      </ResponsiveContainer>
+      <div className="h-[300px] w-full">
+        <ResponsiveContainer width="100%" height="100%">
+          <AreaChart
+            data={data}
+            margin={{ top: 10, right: 0, left: 0, bottom: 0 }}
+          >
+            <defs>
+              <linearGradient id="colorValue" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="5%" stopColor="#4f46e5" stopOpacity={0.3} />
+                <stop offset="95%" stopColor="#4f46e5" stopOpacity={0} />
+              </linearGradient>
+            </defs>
+            <CartesianGrid
+              strokeDasharray="3 3"
+              vertical={false}
+              stroke="#e2e8f0"
+              dark:stroke="#334155"
+            />
+            <XAxis
+              dataKey="name"
+              axisLine={false}
+              tickLine={false}
+              tick={{ fill: "#94a3b8", fontSize: 12 }}
+              dy={10}
+            />
+            <Tooltip
+              contentStyle={{
+                borderRadius: "8px",
+                border: "none",
+                boxShadow: "0 4px 6px -1px rgb(0 0 0 / 0.1)",
+                backgroundColor: "rgba(255, 255, 255, 0.9)",
+              }}
+            />
+            <Area
+              type="monotone"
+              dataKey="value"
+              stroke="#4f46e5"
+              strokeWidth={3}
+              fillOpacity={1}
+              fill="url(#colorValue)"
+            />
+          </AreaChart>
+        </ResponsiveContainer>
+      </div>
     </div>
   );
 }

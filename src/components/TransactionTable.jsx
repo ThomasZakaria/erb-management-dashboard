@@ -1,14 +1,14 @@
 const transactions = [
   {
     id: "#1254",
-    customer: "Ahmad Mohamed",
+    customer: "John Ashrof",
     date: "2026-04-20",
     amount: "$450.00",
     status: "Completed",
   },
   {
     id: "#1255",
-    customer: "Sara Hassan",
+    customer: "Yahia Mostafa",
     date: "2026-04-21",
     amount: "$1,200.00",
     status: "Pending",

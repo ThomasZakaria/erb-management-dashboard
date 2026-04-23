@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import Sidebar from "./layout/Sidebar";
-import StatCard from "./components/StatCard";
+import StockStats from "./components/StockStats";
 import MainChart from "./components/MainChart";
-import TransactionTable from "./components/TransactionTable";
+import StockTable from "./components/StockTable";
 import { Sun, Moon } from "lucide-react";
 
 function App() {
@@ -40,14 +40,11 @@ function App() {
           </button>
         </header>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-          <StatCard title="Total Balance" value="$24,500" />
-          <StatCard title="Total Earnings" value="$12,200" />
-          <StatCard title="Active Projects" value="12" />
-        </div>
+        <StockStats />
 
         <MainChart />
-        <TransactionTable />
+
+        <StockTable />
       </main>
     </div>
   );

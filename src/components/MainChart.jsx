@@ -11,47 +11,39 @@ import {
 export default function MainChart() {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    fetch("http://erbsys.runasp.net/api/Charts/inventory/product")
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        return response.json();
-      })
-      .then((result) => {
-        setData(result);
+    setIsMounted(true);
+    fetch(
+      "http://management.runasp.net/api/v1/dashboard/sales-analytics-charts/sales-trend",
+    )
+      .then((res) => res.json())
+      .then((d) => {
+        setData(d);
         setIsLoading(false);
       })
-      .catch((err) => {
-        setError(err.message);
-        setIsLoading(false);
-      });
+      .catch(() => setIsLoading(false));
   }, []);
 
+  if (!isMounted)
+    return (
+      <div className="h-80 w-full bg-slate-50 dark:bg-slate-800/50 rounded-2xl animate-pulse" />
+    );
+
   return (
-    <div className="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 mb-8 transition-colors">
+    <div className="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 mb-8 transition-colors">
       <h3 className="text-lg font-bold mb-6 text-slate-800 dark:text-white">
-        Inventory Flow
+        Sales Analytics
       </h3>
-
-      <div className="h-[300px] w-full flex items-center justify-center">
-        {isLoading && <p className="text-slate-500">Loading chart data...</p>}
-
-        {error && (
-          <p className="text-rose-500">
-            Failed to load data. Please check CORS or API connection.
-          </p>
-        )}
-
-        {!isLoading && !error && data.length > 0 && (
-          <ResponsiveContainer width="100%" height="100%">
-            <AreaChart
-              data={data}
-              margin={{ top: 10, right: 0, left: 0, bottom: 0 }}
-            >
+      <div className="w-full h-80 min-h-[320px]">
+        {isLoading ? (
+          <div className="w-full h-full flex items-center justify-center text-slate-400 animate-pulse">
+            Loading...
+          </div>
+        ) : data.length > 0 ? (
+          <ResponsiveContainer width="100%" aspect={3}>
+            <AreaChart data={data}>
               <defs>
                 <linearGradient id="colorValue" x1="0" y1="0" x2="0" y2="1">
                   <stop offset="5%" stopColor="#4f46e5" stopOpacity={0.3} />
@@ -72,10 +64,10 @@ export default function MainChart() {
               />
               <Tooltip
                 contentStyle={{
-                  borderRadius: "8px",
+                  borderRadius: "12px",
                   border: "none",
-                  boxShadow: "0 4px 6px -1px rgb(0 0 0 / 0.1)",
                   backgroundColor: "rgba(255, 255, 255, 0.9)",
+                  boxShadow: "0 10px 15px -3px rgb(0 0 0 / 0.1)",
                 }}
               />
               <Area
@@ -83,11 +75,14 @@ export default function MainChart() {
                 dataKey="value"
                 stroke="#4f46e5"
                 strokeWidth={3}
-                fillOpacity={1}
                 fill="url(#colorValue)"
               />
             </AreaChart>
           </ResponsiveContainer>
+        ) : (
+          <div className="w-full h-full flex items-center justify-center text-rose-500">
+            No data available
+          </div>
         )}
       </div>
     </div>
